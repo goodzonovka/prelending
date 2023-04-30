@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dysos - розыгрыш пылесоса</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Poppins&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div id="tsparticles"></div>
+    <div class="top-panel">
+        <div class="container">
+            <div class="top-panel__inner">
+                Участвуйте в розыгрыше пылесоса - сделайте уборку легкой и быстрой!
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="offer">
+            <div class="offer__image">
+                <img src="images/1.webp" alt="" class="animate__heartBeat">
+            </div>
+            <div class="block offer__content">
+                <p>Мы проводим розыгрыш мощного и эффективного пылесоса Dysos, который сделает вашу уборку проще и
+                    быстрее.
+                    Участвуйте сейчас и получите шанс выиграть этот отличный приз!</p>
+                <p>У вас есть возможность выиграть мощный и эффективный пылесос! Просто введите
+                    свое имя и адрес электронной почты и ответьте на 3 вопроса, чтобы принять участие в розыгрыше.</p>
+
+                <form action="" class="form" onsubmit="return form()">
+                    <div class="form-group">
+                        <input type="text" name="name" required placeholder="Введите имя">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" required placeholder="Введите email...">
+                    </div>
+
+                    <button class="offer__button">Принять участие</button>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="block wrap-questions hide">
+            <div class="questions" data-questions="1">
+                <div class="title">1. Как часто вы проводите уборку в своем доме?</div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_1" value="1" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Каждый день</span>
+                    </label>
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_1" value="2" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Раз в неделю</span>
+                    </label>
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_1" value="3" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Раз в месяц</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="questions hide" data-questions="2">
+                <div class="title">2. Какую область вашего дома вы чаще всего убираете?</div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_2" value="1" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Спальня</span>
+                    </label>
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_2" value="2" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Гостиная</span>
+                    </label>
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_2" value="3" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Кухня</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="questions hide" data-questions="3">
+                <div class="title">3. Какие типы поверхностей вы чаще всего убираете в своем доме?</div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_3" value="1" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Ковры</span>
+                    </label>
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_3" value="2" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Полы</span>
+                    </label>
+                </div>
+                <div class="item">
+                    <label>
+                        <input type="radio" name="question_3" value="3" onchange="chooseAnswer(this)">
+                        <span class="rectangle"></span>
+                        <span>Мебель</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="block wrap-boxes hide">
+            <div class="title">Откройте коробку и получите шанс выиграть удивительный приз!<br>
+                У вас <span id="counter_opens">3</span> <span id="counter_text">попытки</span>
+            </div>
+
+
+            <div class="boxes">
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+                <div class="box" onclick="openBox(this)">
+                    <img src="images/gift-close.png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="block final hide">
+            <div class="title">Поздравляем! Вы выиграли пылесос Dyson!<br> Мы свяжемся с вами в ближайшее время!</div>
+            <img src="images/1.webp" alt="">
+        </div>
+
+        <div class="block comments">
+            <h2>Комментарии</h2>
+
+            <div class="list">
+                <div class="item">
+                    <div class="img">
+                        <img src="images/photo-1.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <div class="name">Алина Сергеевна</div>
+                        Супер! Я дуже задоволена, мій перший помічник в прибиранні. Раніше користувалась миючим Томасом,
+                        то це ж була ціла історія - збери, розбери, помий. А тут все дуже просто, швидко і якісно.
+                        Достатня кількість насадок, гарна сила всмоктування, легка чистка. Ще приємний бонус - станція,
+                        на якій зручно зберігати і постійна підзарядка пристрою. Рекомендую!
+                        <div class="date">30.04.2023</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="img">
+                        <img src="images/photo-2.jpg" alt="">
+                    </div>
+                    <div class="text">
+                        <div class="name">Олег Коренюк</div>
+                        Пылесос бомба. До этого была 6ка. Убираю им раз в 2-3 дня. Классический пылесос жена использует
+                        раз в месяц для генеральной уборки. Удобно использовать абсолютно везде, начиная от мелких
+                        крошек на столе заканчивая коврами и пледами. Моторизированные насадки творят чудеса.
+                        <div class="date">29.04.2023</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img">
+                        <img src="images/photo-5.jfif" alt="">
+                    </div>
+                    <div class="text">
+                        <div class="name">Ангелина Бондаренко</div>
+                        Очень удобный пылесос ! Со соей работой справляется на все 100 % Большое количество насадок ,
+                        турбощетки, тихий ! Зарядки хватает на уборку не маленького дома ! Одним словом одни плюсы +++
+                        <div class="date">26.04.2023</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img">
+                        <img src="images/photo-3.jfif" alt="">
+                    </div>
+                    <div class="text">
+                        <div class="name">Анастасия Ярощук</div>
+                        Этот пылесос вытеснит любого конкуренка в вашем доме! Запас батареи вполне достаточен для уборки
+                        около 150кв.м (без ковров), с коврами около 80кв.м.
+                        Советую!!!! Это реально супер вещь!!!
+                        <div class="date">20.04.2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert-wrapper">
+    <div class="alert-bg"></div>
+    <div class="alert">
+        <h2></h2>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@2/tsparticles.preset.confetti.bundle.min.js"></script>
+
+<script>
+    (async () => {
+        await tsParticles.load("tsparticles", {
+            emitters: [
+                {
+                    position: {
+                        x: 20,
+                        y: 0,
+                    },
+                },
+                {
+                    position: {
+                        x: 50,
+                        y: 0,
+                    },
+                },
+                {
+                    position: {
+                        x: 80,
+                        y: 0,
+                    },
+                },
+            ],
+            preset: "confetti",
+        });
+    })();
+
+    let alertWrapper = document.querySelector('.alert-wrapper'),
+        wrapQuestions = document.querySelector('.wrap-questions'),
+        wrapBoxes = document.querySelector('.wrap-boxes'),
+        wrapFinal = document.querySelector('.final');
+
+    let activeOpenBoxes = true
+
+    function openBox(el) {
+        if (activeOpenBoxes && !el.classList.contains('open')) {
+            let counterOpens = document.querySelector('#counter_opens'),
+                 counterText = document.querySelector('#counter_text')
+            el.classList.add('open');
+            el.querySelector('img').setAttribute('src', 'images/gift-open.png')
+            counterOpens.textContent = +counterOpens.textContent - 1
+            if (counterOpens.textContent == 0) {
+                counterText.textContent = 'попыток'
+                el.querySelector('img').setAttribute('src', 'images/gift-open-with-present.png')
+                activeOpenBoxes = false
+
+                alertWrapper.querySelector('h2').innerHTML = 'Поздравляем!<br> <span>Вы выиграли пылесос Dyson!</span>'
+                alertWrapper.classList.add('show')
+
+                setTimeout(() => {
+                    alertWrapper.classList.remove('show')
+                    wrapBoxes.classList.add('hide')
+                    wrapFinal.classList.remove('hide')
+                }, 3000)
+                return
+            }
+            if (counterOpens.textContent == 1) {
+                counterText.textContent = 'попытка'
+            }
+        }
+    }
+
+    function chooseAnswer(el) {
+        let parent = el.closest('.questions'),
+            queue = +parent.getAttribute('data-questions')
+
+        if (queue == 3) {
+            alertWrapper.querySelector('h2').innerHTML = 'Розыгрыш!<br> <span>Откройте коробку и получите шанс выиграть удивительный приз!</span>'
+            alertWrapper.classList.add('show')
+
+            setTimeout(() => {
+                alertWrapper.classList.remove('show')
+                wrapQuestions.classList.add('hide')
+                wrapBoxes.classList.remove('hide')
+            }, 3000)
+            return
+        }
+
+        parent.classList.add('hide')
+        document.querySelector(`[data-questions="${queue + 1}"]`).classList.remove('hide')
+    }
+
+
+    function form() {
+        let blockOffer = document.querySelector('.offer')
+
+        alertWrapper.querySelector('h2').innerText = 'Теперь ответьте на вопросы'
+        alertWrapper.classList.add('show')
+
+        setTimeout(() => {
+            blockOffer.classList.add('hide')
+            wrapQuestions.classList.remove('hide')
+            alertWrapper.classList.remove('show')
+        }, 3000)
+        return false
+    }
+</script>
+</body>
+</html>
